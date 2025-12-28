@@ -3,10 +3,42 @@ import culture from '../assets/culture.avif'
 import boring from '../assets/boring.avif'
 import halffaced from '../assets/halffaced.avif'
 import thinking from '../assets/thinking.avif'
+import { useEffect, useState } from 'react'
+import '../App.css'
+import { motion } from 'framer-motion'
 
 function FeaturedWork() {
+  const [mousePosition, setMousePosition]= useState({
+    x: 0,
+    y:0
+  })
+  console.log(mousePosition)
+
+  useEffect(() =>{
+    const mousemovement = e =>{
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      })
+    }
+    window.addEventListener('mousemove', mousemovement)
+    return () => {
+      window.removeEventListener('mousemove', mousemovement)
+    }
+  }, [mousePosition])
+
+  const variants= {
+    default:{
+      x: mousePosition.x -16,
+      y:mousePosition.y -16
+    }
+  }
+
+
+
   return (
     <div className='flex flex-col lg:flex-row gap-8 py-12 lg:mt-5 border-t border-b items-start'>
+              
               <div className='flex flex-col gap-2 lg:gap-5  lg:pr-15 lg:flex-1 '>
                 <h1 className='font-bold text-5xl lg:text-7xl sticky'>
                   FEATURED WORK
@@ -21,6 +53,12 @@ function FeaturedWork() {
               <section className=' flex-2 flex flex-col gap-8 lg:border-l lg:pl-10  justify-between '>
         <div className='flex flex-col  gap-3 border-t pt-8 lg:border-t-0 lg:pt-0'>
            <div className='rounded-2xl'>
+            <motion.div 
+              variants={variants}
+              animate='default'
+              className='cursor'
+              >fylla
+              </motion.div>
                 <img 
                  className='rounded-2xl'
                 src={umbrellawoman} alt="" />

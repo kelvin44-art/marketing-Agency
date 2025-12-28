@@ -9,21 +9,12 @@ import Work from '../Components/Work'
 import Values from '../Headers/Values'
 
 function Home() {
-  const { scrollY} = useScroll()
-  useMotionValueEvent(scrollY, 'change', (val)=> {
-    console.log(val)
-  })
-  const scale = useTransform(scrollY, [1995, 2852], [1.2, 1.6])
+  
 
   return (
     <>
       <motion.div
-        style={{
-          scale,
-        }}
       >
-
-
       </motion.div>
     
         <div>
