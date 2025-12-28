@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <div className='p-3 bg-amber-50'>
+    <div className='p-3 '>
           <div className='border p-8'>
     <Routes >
       <Route path="/" element={<Home/>}/>
