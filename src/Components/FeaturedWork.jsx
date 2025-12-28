@@ -29,8 +29,8 @@ function FeaturedWork() {
 
   const variants= {
     default:{
-      x: mousePosition.x -16,
-      y:mousePosition.y -16
+      x: mousePosition.x - 24,
+      y:mousePosition.y -18
     }
   }
 
@@ -40,7 +40,7 @@ function FeaturedWork() {
     <div className='flex flex-col lg:flex-row gap-8 py-12 lg:mt-5 border-t border-b items-start'>
               
               <div className='flex flex-col gap-2 lg:gap-5  lg:pr-15 lg:flex-1 '>
-                <h1 className='font-bold text-5xl lg:text-7xl sticky'>
+                <h1 className='font-bold text-5xl tracking-wide lg:text-7xl sticky'>
                   FEATURED WORK
                 </h1>
                 <p className='text-[18px] lg:text-[20px] py-2'>
@@ -56,7 +56,7 @@ function FeaturedWork() {
             <motion.div 
               variants={variants}
               animate='default'
-              className='cursor'
+              className='cursor hidden'
               >fylla
               </motion.div>
                 <img 
